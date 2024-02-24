@@ -28,6 +28,14 @@ app.get('/version', (request, response) => {
 	response.send('Version: '+majorVersion+'.'+minorVersion)
 })
 
+app.get('/fetchNum1To6', (request, response) => {
+	console.log('Calling /fetchNum1To6 on Node.js server.')
+	let num = Math.floor(Math.random() * 6) + 1
+
+	response.type('text/plain')
+	response.send(num.toString())
+})
+
 app.get('/api/ping', (request, response) => {
 	console.log('Calling "/api/ping"')
 	response.type('text/plain')
